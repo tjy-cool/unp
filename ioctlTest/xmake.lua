@@ -10,18 +10,11 @@ elseif is_host("linux") then
     myhost="Linux"
 end
 
--- 客户端配置
-target "udp-client"
-    set_kind "binary"
-    add_files "udp-client.c"
-    add_includedirs("../libunp/include/"..myhost)
-    add_links("unp")
-    add_linkdirs("../libunp/lib/"..myhost)
 
--- 服务器配置
-target "udp-server"
+-- 客户端配置
+target "getifiinfo"
     set_kind "binary"
-    add_files "udp-server.c"
+    add_files "getifiinfo.c"
     add_includedirs("../libunp/include/"..myhost)
     add_links("unp")
     add_linkdirs("../libunp/lib/"..myhost)
